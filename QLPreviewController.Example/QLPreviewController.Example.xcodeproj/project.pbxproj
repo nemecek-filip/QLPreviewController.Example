@@ -19,6 +19,7 @@
 		DC136668242F3DC7002B25CC /* Word_example.docx in Resources */ = {isa = PBXBuildFile; fileRef = DC136667242F3DC7002B25CC /* Word_example.docx */; };
 		DC13666A242F412F002B25CC /* Keynote_example.key in Resources */ = {isa = PBXBuildFile; fileRef = DC136669242F412F002B25CC /* Keynote_example.key */; };
 		DC13666C242F41B3002B25CC /* cup_saucer_set.usdz in Resources */ = {isa = PBXBuildFile; fileRef = DC13666B242F41B3002B25CC /* cup_saucer_set.usdz */; };
+		DCE54F922439F10400022FB6 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE54F912439F10400022FB6 /* PreviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DC136667242F3DC7002B25CC /* Word_example.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Word_example.docx; sourceTree = "<group>"; };
 		DC136669242F412F002B25CC /* Keynote_example.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = Keynote_example.key; sourceTree = "<group>"; };
 		DC13666B242F41B3002B25CC /* cup_saucer_set.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cup_saucer_set.usdz; sourceTree = "<group>"; };
+		DCE54F912439F10400022FB6 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DC136648242E9CE3002B25CC /* AppDelegate.swift */,
 				DC13664A242E9CE3002B25CC /* SceneDelegate.swift */,
 				DC13664C242E9CE3002B25CC /* ViewController.swift */,
+				DCE54F912439F10400022FB6 /* PreviewCell.swift */,
 				DC13664E242E9CE3002B25CC /* Main.storyboard */,
 				DC136651242E9CE6002B25CC /* Assets.xcassets */,
 				DC136653242E9CE6002B25CC /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 			files = (
 				DC13664D242E9CE3002B25CC /* ViewController.swift in Sources */,
 				DC136649242E9CE3002B25CC /* AppDelegate.swift in Sources */,
+				DCE54F922439F10400022FB6 /* PreviewCell.swift in Sources */,
 				DC13664B242E9CE3002B25CC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

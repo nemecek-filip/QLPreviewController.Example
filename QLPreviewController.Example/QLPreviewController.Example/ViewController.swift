@@ -23,13 +23,42 @@ class ViewController: UITableViewController, QLPreviewControllerDataSource {
         ].filter({ QLPreviewController.canPreview($0) })
     
     let previewVC = QLPreviewController()
+    
+    let previewGenerator = QLThumbnailGenerator()
+    let thumbnailSize = CGSize(width: 60, height: 90)
+    let scale = UIScreen.main.scale
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         
         previewVC.dataSource = self
+        
+        generatePreviews()
+    }
+    
+    func generatePreviews() {
+        let group = DispatchGroup()
+        
+        for preview in self.previews {
+            guard let url = preview.previewItemURL else { continue }
+            group.enter()
+            let request = QLThumbnailGenerator.Request(fileAt: url, size: self.thumbnailSize, scale: self.scale, representationTypes: .all)
+            
+            self.previewGenerator.generateBestRepresentation(for: request) { (thumbnail, error) in
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let thumb = thumbnail {
+                    preview.thumbnail = thumb.uiImage
+                }
+                
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            self.tableView.reloadData()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,9 +66,12 @@ class ViewController: UITableViewController, QLPreviewControllerDataSource {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PreviewCell else {
+            preconditionFailure()
+        }
         
-        cell.textLabel?.text = previews[indexPath.row].displayName
+        let preview = previews[indexPath.row]
+        cell.configure(with: preview)
         
         return cell
     }
@@ -63,14 +95,14 @@ class ViewController: UITableViewController, QLPreviewControllerDataSource {
     @IBAction func gitHubButtonTapped(_ sender: Any) {
         UIApplication.shared.open(URL(string: "https://github.com/nemecek-filip")!, options: [:], completionHandler: nil)
     }
-    
-
 }
 
 class Preview: NSObject, QLPreviewItem {
     let displayName: String
     let fileName: String
     let fileExtension: String
+    
+    var thumbnail: UIImage?
     
     init(displayName: String, fileName: String, fileExtension: String) {
         self.displayName = displayName
@@ -82,6 +114,10 @@ class Preview: NSObject, QLPreviewItem {
     
     var previewItemTitle: String? {
         return displayName
+    }
+    
+    var formattedFileName: String {
+        return "\(fileName).\(fileExtension)"
     }
     
     var previewItemURL: URL? {
