@@ -44,6 +44,7 @@ class ViewController: UITableViewController, QLPreviewControllerDataSource {
             group.enter()
             let request = QLThumbnailGenerator.Request(fileAt: url, size: self.thumbnailSize, scale: self.scale, representationTypes: .all)
             
+            
             self.previewGenerator.generateBestRepresentation(for: request) { (thumbnail, error) in
                 
                 if let error = error {
