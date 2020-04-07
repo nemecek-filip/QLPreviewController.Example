@@ -1,4 +1,16 @@
+
+<p align="center">
+  <a href="https://github.com/nemecek-filip/DynamicType-ReferenceApp">Dynamic Type</a> &bull;
+  <a href="https://github.com/nemecek-filip/EKEventKit.Example">Event Kit</a> &bull;
+  <b>Quick Look</b> 	&bull;
+  <a href="https://github.com/nemecek-filip/App-ideas">App Ideas</a>
+</p>
+
+----
 # QLPreviewController Example
+
+[![Twitter: @nemecek_f](https://img.shields.io/badge/contact-@nemecek_f-blue.svg?style=flat)](https://twitter.com/nemecek_f)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/nemecek-filip/QLPreviewController.Example/blob/master/LICENSE)
 
 ![](Images/qlPreviewHeader.png)
 
