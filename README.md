@@ -3,7 +3,8 @@
   <a href="https://github.com/nemecek-filip/DynamicType-ReferenceApp">Dynamic Type</a> &bull;
   <a href="https://github.com/nemecek-filip/EKEventKit.Example">Event Kit</a> &bull;
   <b>Quick Look</b> 	&bull;
-  <a href="https://github.com/nemecek-filip/App-ideas">App Ideas</a>
+  <a href="https://github.com/nemecek-filip/App-ideas">App Ideas</a> &bull;
+  <a href="https://github.com/nemecek-filip/KeyboardPreview.iOS">Keyboard Preview</a>
 </p>
 
 ----
