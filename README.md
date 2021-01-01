@@ -4,7 +4,9 @@
   <a href="https://github.com/nemecek-filip/EKEventKit.Example">Event Kit</a> &bull;
   <b>Quick Look</b> 	&bull;
   <a href="https://github.com/nemecek-filip/App-ideas">App Ideas</a> &bull;
-  <a href="https://github.com/nemecek-filip/KeyboardPreview.iOS">Keyboard Preview</a>
+  <a href="https://github.com/nemecek-filip/KeyboardPreview.iOS">Keyboard Preview</a> &bull;
+  <a href="https://github.com/nemecek-filip/CompositionalDiffablePlayground.ios">Modern Collection Views</a>
+</p>
 </p>
 
 ----
